@@ -16,3 +16,12 @@ if args.quality < 1 or args.quality > 95:
     print("Error: Quality should be between 1 and 95")
     exit(1)
 
+name = args.filename
+name = name.split(".")[0]
+
+img = Image.open(args.filename)
+for i in range(args.number):
+    new_name = name + "_" + str(i) + ".jpg" 
+    img.save(new_name)
+    img = Image.open(new_name)
+
