@@ -22,6 +22,6 @@ name = name.split(".")[0]
 img = Image.open(args.filename)
 for i in range(args.number):
     new_name = name + "_" + str(i) + ".jpg" 
-    img.save(new_name)
+    img.save(new_name, quality=args.quality)
     img = Image.open(new_name)
 
